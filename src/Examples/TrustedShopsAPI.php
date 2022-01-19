@@ -1,9 +1,11 @@
 <?php
 
-namespace PHPAPI\Auth\OAuth;
+namespace PHPAPI\Examples;
+
+use PHPAPI\API\API;
 
 class TrustedShopsAPI extends API {
-    public function getUrl(): string {
+    protected function getUrl() : string {
         return 'https://api.etrusted.com';
     }
 }

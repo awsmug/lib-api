@@ -1,10 +1,10 @@
 <?php
 
-namespace PHPAPI\Auth\OAuth;
+namespace PHPAPI\Examples;
 
-use PHPAPI\Auth\OAuth\AuthServer;
+use PHPAPI\Auth\OAuth;
 
-class TrustedShopsAuth extends Auth {
+class TrustedShopsAuth extends OAuth {
     public function getUrl() : string {
         return 'https://login.etrusted.com/oauth/token';
     }

@@ -1,8 +1,9 @@
 <?php
 
-namespace PHPAPI\Auth\OAuth;
+namespace PHPAPI\API;
 
 use GuzzleHttp\Client;
+use PHPAPI\Auth\AuthInterface;
 
 /**
  * Parent Class for APIs.
@@ -37,7 +38,7 @@ abstract class API {
      * 
      * @since 1.0.0
      */
-    abstract public function getUrl() : string;
+    abstract protected function getUrl() : string;
 
     public function request( string $endpoint, string $method, array $params = [] ) {
         $client = new Client();

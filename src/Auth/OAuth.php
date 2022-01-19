@@ -1,15 +1,16 @@
 <?php
 
-namespace PHPAPI\Auth\OAuth;
+namespace PHPAPI\Auth;
 
 use GuzzleHttp\Client;
+use PHPAPI\Tools\Token;
 
 /**
  * Parent Class for auth Servers.
  * 
  * @since 1.0.0
  */
-abstract class Auth implements AuthInterface {
+abstract class OAuth implements AuthInterface {
     /**
      * Field name for client id which will be sent to auth server.
      * 

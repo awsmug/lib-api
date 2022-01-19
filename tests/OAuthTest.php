@@ -2,9 +2,9 @@
 
 require( dirname( __FILE__ ) . '/Bootstrap.php' );
 
+use PHPAPI\Examples\TrustedShopsAPI;
+use PHPAPI\Examples\TrustedShopsAuth;
 use PHPUnit\Framework\TestCase;
-use PHPAPI\Auth\OAuth\TrustedShopsAuth;
-use PHPAPI\Auth\OAuth\TrustedShopsAPI;
 
 class OAuthTest extends TestCase {
     public function testAPIAPIFunction() {
@@ -18,5 +18,7 @@ class OAuthTest extends TestCase {
 		];
 
 		$api->request( '/reviews', 'GET', $params );
+
+		// $api->reviews->get( $params );
 	}
 }

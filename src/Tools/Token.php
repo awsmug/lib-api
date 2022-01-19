@@ -1,6 +1,6 @@
 <?php
 
-namespace PHPAPI\Auth\OAuth;
+namespace PHPAPI\Tools;
 
 /**
  * Token class
