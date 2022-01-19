@@ -125,7 +125,7 @@ abstract class Auth implements AuthInterface {
 
         $this->accessToken = new Token( $data->access_token, $time, $data->expires_in );
 
-        if( array_key_exists( 'refresh_token', $data ) ) {
+        if( property_exists( 'refresh_token', $data ) ) {
             $this->refreshToken = new Token( $data->refresh_token, $time, $data->refresh_expires_in );
         }
 
