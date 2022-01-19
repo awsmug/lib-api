@@ -11,16 +11,6 @@ class OAuthTest extends TestCase {
 		$auth  = new TrustedShopsAuth( TS_CLIENT_ID, TS_CLIENT_SECRET );
 		$api   = new TrustedShopsAPI( $auth );
 
-		echo TS_CLIENT_ID;
-
-		$params = [
-			'count' => 100,
-			'rating' => '1',
-			'status' => 'APPROVED'
-		];
-
-		$api->request( '/reviews', 'GET', $params );
-
 		$params = [
 			'count' => 100,
 			'rating' => '1',

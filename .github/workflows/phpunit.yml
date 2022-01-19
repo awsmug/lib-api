@@ -16,3 +16,6 @@ jobs:
         with:
           bootstrap: vendor/autoload.php
           configuration: phpunit.xml
+        env:
+          TS_CLIENT_ID: ${{ secrets.TS_CLIENT_ID }}
+          TS_CLIENT_SECRET: ${{ secrets.TS_CLIENT_SECRET }}
