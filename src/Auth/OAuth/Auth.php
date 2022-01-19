@@ -80,7 +80,7 @@ abstract class Auth implements AuthInterface {
      * 
      * @since 1.0.0
      */
-    abstract public function getUrl() : string;
+    abstract protected function getUrl() : string;
 
     /**
      * Get client Id.
@@ -89,8 +89,19 @@ abstract class Auth implements AuthInterface {
      * 
      * @since 1.0.0
      */
-    public function getClientId() : string {
+    protected function getClientId() : string {
         return $this->clientId;
+    }
+
+    /**
+     * Get client secret.
+     * 
+     * @return string Client id.
+     * 
+     * @since 1.0.0
+     */
+    protected function getClientSecret() : string {
+        return $this->clientSecret;
     }
 
     /**
@@ -106,6 +117,11 @@ abstract class Auth implements AuthInterface {
         return $this->accessToken;
     }
 
+    /**
+     * Create access token.
+     * 
+     * @since 1.0.0
+     */
     protected function createAccessToken() {
         $client = new Client();
 
@@ -132,6 +148,26 @@ abstract class Auth implements AuthInterface {
         unset( $data );
     }
 
+    /**
+     * Auth headers for API requests.
+     * 
+     * @return array Auth headers.
+     * 
+     * @since 1.0.0
+     */
+    public function getAuthHeaders() : array {
+        return [
+            'Authorization' => 'Bearer ' . $this->getAccessToken()->getToken(),
+        ];
+    }
+
+    /**
+     * Processing response.
+     * 
+     * @param mixed
+     * 
+     * @since 1.0.0
+     */
     protected function processResponse( $data ) {
         return json_decode( $data );
     }
@@ -164,7 +200,7 @@ abstract class Auth implements AuthInterface {
      */
     protected function params() : array {
         $params = [
-            $this->fieldClientId => $this->clientId
+            $this->fieldClientId => $this->getClientId()
         ];
 
         return $params;
@@ -182,7 +218,7 @@ abstract class Auth implements AuthInterface {
     protected function paramsAuth() : array {
         $params = $this->params();
 
-        $params[ $this->fieldClientSecret ] = $this->clientSecret;
+        $params[ $this->fieldClientSecret ] = $this->getClientSecret();
         $params['grant_type']               = 'client_credentials';
         return $params;
     }

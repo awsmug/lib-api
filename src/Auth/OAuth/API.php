@@ -4,15 +4,39 @@ namespace PHPAPI\Auth\OAuth;
 
 use GuzzleHttp\Client;
 
+/**
+ * Parent Class for APIs.
+ * 
+ * @since 1.0.0
+ */
 abstract class API {
+    /**
+     * Field name for client id which will be sent to auth server.
+     * 
+     * @var AuthInterface
+     * 
+     * @since 1.0.0
+     */
     protected AuthInterface $auth;
 
-    protected string $url;
-
+    /**
+     * Constructor
+     * 
+     * @param AuthInterface
+     * 
+     * @since 1.0.0
+     */
     public function __construct( AuthInterface $auth ) {
         $this->auth = $auth;
     }
 
+    /**
+     * API Url
+     * 
+     * @return string
+     * 
+     * @since 1.0.0
+     */
     abstract public function getUrl() : string;
 
     public function request( string $endpoint, string $method, array $params = [] ) {
@@ -49,11 +73,7 @@ abstract class API {
      * @since 1.0.0
      */
     protected function headers() : array {
-        $headers = [
-            'Content-Type' => 'application/json',
-            'Authorization' => 'Bearer ' . $this->auth->getAccessToken()->getToken(),
-        ];
-
+        $headers = $this->auth->getAuthHeaders();
         return $headers;
     }
 }
