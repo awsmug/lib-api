@@ -73,8 +73,17 @@ abstract class API {
         }
 
         $response = $client->request( $method, $url, $options )->getBody()->getContents();
-        $response = json_decode( $response );
+        return $this->processResponse( $response );
+    }
 
-        $response = $response;
+    /**
+     * Processing response.
+     * 
+     * @param mixed
+     * 
+     * @since 1.0.0
+     */
+    protected function processResponse( $data ) {
+        return json_decode( $data );
     }
 }

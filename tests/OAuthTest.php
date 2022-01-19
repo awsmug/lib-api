@@ -13,11 +13,14 @@ class OAuthTest extends TestCase {
 
 		$params = [
 			'count' => 100,
-			'rating' => '1',
+			'rating' => '5',
 			'status' => 'APPROVED'
 		];
 
-		$api->request( '/reviews', 'GET', $params );
+		$response = $api->request( '/reviews', 'GET', $params );
+
+		$this->assertEquals( 5, $response->items[0]->rating );
+		
 		// $api->reviews->get( $params );
 	}
 }
