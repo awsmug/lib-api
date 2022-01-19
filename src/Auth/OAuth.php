@@ -6,7 +6,7 @@ use GuzzleHttp\Client;
 use PHPAPI\Tools\Token;
 
 /**
- * Parent Class for auth Servers.
+ * Parent Class OAuth.
  * 
  * @since 1.0.0
  */
