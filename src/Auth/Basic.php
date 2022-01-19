@@ -27,6 +27,17 @@ abstract class Basic implements AuthInterface {
     }
 
     /**
+     * Get token.
+     * 
+     * @return string
+     * 
+     * @since 1.0.0
+     */
+    protected function getToken() : string {
+        return $this->token;
+    }
+
+    /**
      * Auth headers for API requests.
      * 
      * @return array Auth headers.
@@ -35,7 +46,7 @@ abstract class Basic implements AuthInterface {
      */
     public function getAuthHeaders() : array {
         return [
-            'Authorization' => 'Basic ' . $this->token,
+            'Authorization' => 'Basic ' . $this->getToken(),
         ];
     }
 }

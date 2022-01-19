@@ -17,20 +17,7 @@ class TrustedShopsAuth extends OAuth {
      * 
      * @since 1.0.0
      */
-    public function getUrl() : string {
+    protected function getUrl() : string {
         return 'https://login.etrusted.com/oauth/token';
-    }
-
-    /**
-     * Individualizing Params.
-     * 
-     * @return array
-     * 
-     * @since 1.0.0
-     */
-    public function params() : array {
-        $params = parent::params();
-        $params['audience']   = 'https://api.etrusted.com';
-        return $params;
     }
 }

@@ -18,7 +18,6 @@ class OAuthTest extends TestCase {
 		];
 
 		$api->request( '/reviews', 'GET', $params );
-
 		// $api->reviews->get( $params );
 	}
 }

@@ -32,6 +32,20 @@ abstract class API {
     }
 
     /**
+     * Fields to send.
+     * 
+     * Can be overwritten and extended by child class.
+     * 
+     * @return array Fields which will be sent on authorization.
+     * 
+     * @since 1.0.0
+     */
+    protected function headers() : array {
+        $headers = $this->auth->getAuthHeaders();
+        return $headers;
+    }
+
+    /**
      * API Url
      * 
      * @return string
@@ -62,19 +76,5 @@ abstract class API {
         $response = json_decode( $response );
 
         $response = $response;
-    }
-
-    /**
-     * Fields to send.
-     * 
-     * Can be overwritten and extended by child class.
-     * 
-     * @return array Fields which will be sent on authorization.
-     * 
-     * @since 1.0.0
-     */
-    protected function headers() : array {
-        $headers = $this->auth->getAuthHeaders();
-        return $headers;
     }
 }
