@@ -10,6 +10,8 @@ class OAuthTest extends TestCase {
     public function testAPIAPIFunction() {
 		$auth  = new TrustedShopsAuth( TS_CLIENT_ID, TS_CLIENT_SECRET );
 		$api   = new TrustedShopsAPI( $auth );
+		$route = new TrustedShopsReviews( $api );
+		
 
 		$params = [
 			'count' => 100,
@@ -20,7 +22,7 @@ class OAuthTest extends TestCase {
 		$response = $api->request( '/reviews', 'GET', $params );
 
 		$this->assertEquals( 5, $response->items[0]->rating );
-		
+
 		// $api->reviews->get( $params );
 	}
 }
