@@ -2,10 +2,7 @@
     "autoload": {
         "psr-4": {
             "AWSM\\LibAPI\\": "src"
-        },
-        "files": [
-            "src/phpapi.php"
-        ]
+        }
     },
     "require": {
         "guzzlehttp/guzzle": "^7.4"
