@@ -1,7 +1,7 @@
 {
     "autoload": {
         "psr-4": {
-            "AWSM\LibAPI\\": "src"
+            "AWSM\\LibAPI\\": "src"
         },
         "files": [
             "src/phpapi.php"
