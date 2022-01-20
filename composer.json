@@ -1,4 +1,27 @@
 {
+    "name": "awsm/lib-api",
+    "description": "A library of API components to interact with external APIs.",
+    "version": "1.0.0-alpha.1",
+    "license": "GPL-2.0-or-later",
+    "keywords": [
+        "lib-api",
+        "api",
+        "rest",
+        "library",
+        "client",
+        "request"
+    ],
+    "authors": [
+        {
+          "name": "Sven Wagener",
+          "email": "sven@awesome.ug",
+          "homepage": "http://awesome.ug",
+          "role": "Developer"
+        }
+      ],
+    "support": {
+        "issues": "https://github.com/awsmug/lib-api/issues"
+    },
     "autoload": {
         "psr-4": {
             "AWSM\\LibAPI\\": "src"
