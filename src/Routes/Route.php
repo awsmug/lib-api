@@ -3,6 +3,8 @@
 namespace PHPAPI\Routes;
 
 use PHPAPI\API\API;
+use PHPAPI\Exceptions\Exception;
+use PHPAPI\Tools\Methods;
 
 /**
  * Class Route.
@@ -31,7 +33,7 @@ abstract class Route {
     /**
      * Route methods
      * 
-     * @var RouteMethod[]
+     * @var array
      * 
      * @since 1.0.0
      */
@@ -64,6 +66,71 @@ abstract class Route {
      * Put in the methods with fields here.
      * 
      * @return RouteMethod[] An array of all methods in endpoint.
+     * 
+     * @since 1.0.0
      */
     abstract protected function methods() : array;
+
+    /**
+     * GET
+     * 
+     * @param array $filters Filter for endpoint
+     * $filters = [
+     *      [ 'fieldname1' => 'value1' ],
+     *      [ 'fieldname2' => 'value2' ],
+     *      [ 'fieldname3' => 'value2' ]
+     *      ...
+     * ]
+     * 
+     * @throws Exception
+     * 
+     * @since 1.0.0
+     */
+    public function get( array $filters ) {
+        if( ! array_key_exists( Methods::GET, $this->methods ) ) {
+            throw new Exception( sprintf( 'Method "%s" not found in route "%s".', Methods::GET, $this->endpoint ), 1 );
+        }
+
+        $fields = $this->methods[ Methods::GET ];
+
+        $params = [];
+        foreach( $filters AS $key => $value ) {
+            if( ! array_key_exists( $key, $fields ) ) {
+                throw new Exception( sprintf( 'Field "%s" not found in route "%s".',$key, $this->endpoint ), 2 );
+            }
+
+            // Doing more checks?
+
+            $params[ $key ] = $value;
+        }
+
+        $response = $this->api->request( $this->endpoint, Methods::GET, $params );
+
+        return $response->items;
+    }
+
+    /**
+     * GET
+     * 
+     * @param array $values Filter for endpoint
+     * $values = [
+     *      [ 'fieldname1' => 'value1' ],
+     *      [ 'fieldname2' => 'value2' ],
+     *      [ 'fieldname3' => 'value2' ]
+     *      ...
+     * ]
+     * 
+     * @throws Exception
+     * 
+     * @since 1.0.0
+     */
+    public function post( array $values ) : bool {
+        if( ! array_key_exists( Methods::POST, $this->methods ) ) {
+            throw new Exception( sprintf( 'Method "%s" not found in route "%s".', Methods::GET, $this->endpoint ), 1 );
+        }
+
+        
+
+        return true;
+    }
 }

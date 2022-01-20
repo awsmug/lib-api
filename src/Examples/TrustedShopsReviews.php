@@ -2,9 +2,9 @@
 
 namespace PHPAPI\Examples;
 
-use PHPAPI\Routes\Field;
 use PHPAPI\Routes\Route;
 use PHPAPI\Tools\Methods;
+use PHPAPI\Tools\Types;
 
 /**
  * Trusted shops auth.
@@ -33,21 +33,49 @@ class TrustedShopsReviews extends Route {
      */
     protected function methods() : array {
         $methods = [
-            Methods::$GET => [
-                new Field( 'channels', 'string' ),
-                new Field( 'after', 'string' ),
-                new Field( 'before', 'string' ),
-                new Field( 'submittedAfter', 'string' ),
-                new Field( 'submittedBefore', 'string' ),
-                new Field( 'count', 'int' ),
-                new Field( 'rating', 'int' ),
-                new Field( 'status', 'string' ),
-                new Field( 'type', 'string' ),
-                new Field( 'hasReply', 'bool' ),
-                new Field( 'additionalInformation', 'string' ),
-                new Field( 'ignoreStatements', 'string' ),
-                new Field( 'query', 'string' ),
-                new Field( 'orderBy', 'string' ),
+            Methods::GET => [
+                'channels' => [
+                    'type' => Types::STRING,
+                ],
+                'after' => [
+                    'type' => Types::STRING,
+                ],
+                'before' => [
+                    'type' => Types::STRING,
+                ],
+                'submittedAfter' => [
+                    'type' => Types::STRING,
+                ],
+                'submittedBefore' => [
+                    'type' => Types::STRING,
+                ],
+                'count' => [
+                    'type' => Types::STRING,
+                ],
+                'rating' => [
+                    'type' => Types::STRING,
+                ],
+                'status' => [
+                    'type' => Types::STRING,
+                ],
+                'type' => [
+                    'type' => Types::STRING,
+                ],
+                'hasReply' => [
+                    'type' => Types::BOOL,
+                ],
+                'additionalInformation' => [
+                    'type' => Types::STRING,
+                ],
+                'ignoreStatements' => [
+                    'type' => Types::BOOL,
+                ],
+                'query' => [
+                    'type' => Types::STRING,
+                ],
+                'orderBy' => [
+                    'type' => Types::STRING,
+                ],
             ]
         ];
 

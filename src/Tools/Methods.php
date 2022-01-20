@@ -17,7 +17,7 @@ class Methods {
      * 
      * @since 1.0.0
      */
-    public static $DELETE = 'DELETE';
+    public const DELETE = 'DELETE';
     
     /**
      * GET
@@ -26,7 +26,7 @@ class Methods {
      * 
      * @since 1.0.0
      */
-    public static $GET = 'GET';
+    public const GET = 'GET';
 
     /**
      * PATCH
@@ -35,7 +35,7 @@ class Methods {
      * 
      * @since 1.0.0
      */
-    public static $PATCH = 'PATCH';
+    public const PATCH = 'PATCH';
 
     /**
      * POST
@@ -44,7 +44,7 @@ class Methods {
      * 
      * @since 1.0.0
      */
-    public static $POST = 'POST';
+    public const POST = 'POST';
 
     /**
      * PUT
@@ -53,5 +53,5 @@ class Methods {
      * 
      * @since 1.0.0
      */
-    public static $PUT = 'PUT';
+    public const PUT = 'PUT';
 }
