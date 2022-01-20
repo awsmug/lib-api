@@ -2,9 +2,9 @@
 
 require( dirname( __FILE__ ) . '/Bootstrap.php' );
 
-use PHPAPI\Examples\TrustedShopsAPI;
-use PHPAPI\Examples\TrustedShopsAuth;
-use PHPAPI\Examples\TrustedShopsReviews;
+use AWSM\LibAPI\Examples\TrustedShopsAPI;
+use AWSM\LibAPI\Examples\TrustedShopsAuth;
+use AWSM\LibAPI\Examples\TrustedShopsReviews;
 use PHPUnit\Framework\TestCase;
 
 class OAuthTest extends TestCase {
@@ -20,7 +20,7 @@ class OAuthTest extends TestCase {
 		];
 
 		$response = $api->request( '/reviews', 'GET', $params );
-
+		
 		$this->assertEquals( 5, $response->items[0]->rating );
 
 		$result = $reviews->get( $params );

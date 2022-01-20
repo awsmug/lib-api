@@ -1,8 +1,8 @@
 <?php
 
-namespace PHPAPI\Examples;
+namespace AWSM\LibAPI\Examples;
 
-use PHPAPI\API\API;
+use AWSM\LibAPI\API\API;
 
 /**
  * Trusted shops API.

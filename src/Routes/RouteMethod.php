@@ -1,8 +1,8 @@
 <?php
 
-namespace PHPAPI\Routes;
+namespace AWSM\LibAPI\Routes;
 
-use PHPAPI\API\API;
+use AWSM\LibAPI\API\API;
 
 /**
  * Class Route.

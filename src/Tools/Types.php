@@ -1,6 +1,6 @@
 <?php
 
-namespace PHPAPI\Tools;
+namespace AWSM\LibAPI\Tools;
 
 /**
  * Class Methods

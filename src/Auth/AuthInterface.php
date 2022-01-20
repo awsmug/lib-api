@@ -1,6 +1,6 @@
 <?php
 
-namespace PHPAPI\Auth;
+namespace AWSM\LibAPI\Auth;
 
 /**
  * Auth interface.

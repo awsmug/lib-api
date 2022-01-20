@@ -1,9 +1,9 @@
 <?php
 
-namespace PHPAPI\Auth;
+namespace AWSM\LibAPI\Auth;
 
 use GuzzleHttp\Client;
-use PHPAPI\Tools\Token;
+use AWSM\LibAPI\Tools\Token;
 
 /**
  * Parent Class OAuth 2.

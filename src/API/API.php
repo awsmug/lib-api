@@ -1,9 +1,9 @@
 <?php
 
-namespace PHPAPI\API;
+namespace AWSM\LibAPI\API;
 
 use GuzzleHttp\Client;
-use PHPAPI\Auth\AuthInterface;
+use AWSM\LibAPI\Auth\AuthInterface;
 
 /**
  * Parent Class for APIs.

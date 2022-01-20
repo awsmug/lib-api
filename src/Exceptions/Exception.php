@@ -1,6 +1,6 @@
 <?php
 
-namespace PHPAPI\Exceptions;
+namespace AWSM\LibAPI\Exceptions;
 
 use Exception as GlobalException;
 

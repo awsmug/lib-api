@@ -1,10 +1,10 @@
 <?php
 
-namespace PHPAPI\Routes;
+namespace AWSM\LibAPI\Routes;
 
-use PHPAPI\API\API;
-use PHPAPI\Exceptions\Exception;
-use PHPAPI\Tools\Methods;
+use AWSM\LibAPI\API\API;
+use AWSM\LibAPI\Exceptions\Exception;
+use AWSM\LibAPI\Tools\Methods;
 
 /**
  * Class Route.

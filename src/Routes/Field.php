@@ -1,6 +1,6 @@
 <?php
 
-namespace PHPAPI\Routes;
+namespace AWSM\LibAPI\Routes;
 
 /**
  * Class Field

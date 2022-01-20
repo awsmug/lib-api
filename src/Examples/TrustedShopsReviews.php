@@ -1,10 +1,10 @@
 <?php
 
-namespace PHPAPI\Examples;
+namespace AWSM\LibAPI\Examples;
 
-use PHPAPI\Routes\Route;
-use PHPAPI\Tools\Methods;
-use PHPAPI\Tools\Types;
+use AWSM\LibAPI\Routes\Route;
+use AWSM\LibAPI\Tools\Methods;
+use AWSM\LibAPI\Tools\Types;
 
 /**
  * Trusted shops auth.
